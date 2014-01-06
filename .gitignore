@@ -17,7 +17,8 @@
 /tmp
 tmp/
 log/*.*
-
+tmp/*
+log/*
 *.rbc                                                                                                                                                 
 *.sassc
 .sass-cache

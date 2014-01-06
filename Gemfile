@@ -43,9 +43,7 @@ end
 # gem 'capistrano', group: :development
 
 # test framework
-group :test, :development do   
-  # Use debugger
-  gem 'byebug'
+group :test, :development do
   gem 'rspec'
   gem 'fabrication'
   gem 'faker'
