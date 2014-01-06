@@ -18,3 +18,29 @@
 tmp/
 log/*.*
 
+*.rbc                                                                                                                                                 
+*.sassc
+.sass-cache
+capybara-*.html
+.rspec
+/.bundle
+/vendor/bundle
+/log/*
+/tmp/*
+/public/system/*
+/coverage/
+/spec/tmp/*
+/public/files/shares/*
+/public/assets/*
+/public/files/imgusers/*
+**.orig
+rerun.txt
+pickle-email-*.html
+spec/support/test_images/*.*
+public/uploads/*
+/config/initializers/secret_token.rb
+public/files/imgsections/*.*
+\#*# 
+# bower
+/app/assets/components/
+app/assets/components/
