@@ -52,6 +52,8 @@ group :test, :development do
   gem 'faker'
   gem 'database_cleaner'
   gem 'bullet'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 # Pagination
