@@ -27,6 +27,8 @@ Chsite::Application.configure do
   # number of complex assets.
   config.assets.debug = true
 
+  #devise
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   # Bullet configuration to monitor and alert us of N+1 queries.
   config.after_initialize do
     Bullet.enable = true

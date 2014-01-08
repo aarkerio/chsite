@@ -4,9 +4,9 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.2'
 gem 'pg'
 gem 'byebug'
-gem "haml"                                                                                                                                            
-gem "haml-rails"
-
+gem 'haml'                                                                                                                                      
+gem 'haml-rails'
+gem 'devise'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
