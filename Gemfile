@@ -7,6 +7,8 @@ gem 'byebug'
 gem 'haml'                                                                                                                                      
 gem 'haml-rails'
 gem 'devise'
+gem 'carrierwave'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 

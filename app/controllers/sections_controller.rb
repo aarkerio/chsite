@@ -1,10 +1,20 @@
+# Chipotle Software (c) 2013 GPLv3
+
 class SectionsController < ApplicationController
+
   before_action :set_section, only: [:show, :edit, :update, :destroy]
+
+  before_filter :authenticate_user!
+
+  before_filter :layout_by_action
+
+  helper_method :sort_column, :sort_direction 
 
   # GET /sections
   # GET /sections.json
   def index
-    @sections = Section.all
+    order = sort_column + " " + sort_direction
+    @sections = Section.paginate(:page => params[:page], :per_page => 10).order(order)
   end
 
   # GET /sections/1
@@ -70,5 +80,13 @@ class SectionsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def section_params
       params.require(:section).permit(:description, :order, :img)
+    end
+    # Next two methods order columns on view
+    def sort_column
+        Section.column_names.include?(params[:sort]) ? params[:sort] : "id"
+    end
+  
+    def sort_direction
+        %w[asc desc].include?(params[:direction]) ? params[:direction] : "DESC"
     end
 end

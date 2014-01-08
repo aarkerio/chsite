@@ -24,15 +24,20 @@
           = link_to "EHR América", "/path3", :class => "navbar-brand"
         .navbar-collapse.collapse
           %ul.nav.navbar-nav
-            %li= link_to "Design", "/path1"
-            %li= link_to "ISO Certification", "/path1"
-            %li= link_to "Roadmap", "/path1"
+            %li= link_to "Design", "/pages/design"
+            %li= link_to "ISO Certification", "/pages/certification"
+            %li= link_to "Roadmap", "/pages/roadmap"
+          - if user_signed_in?
+            = link_to 'Logout', destroy_user_session_path, :method => :delete , :class=>'btn btn-success'
+          - else
+            = link_to 'Login', '/users/sign_in', :class=>'btn btn-success'
           
           %ul.nav.navbar-nav.navbar-right
             %li= link_to "FAQ", "/pages/faq"
-            %li= link_to "About US", "/path1"
-            %li= link_to "Contact", "/path1"
-    
+            %li= link_to "About US", "/pages/about"
+            %li= link_to "Contact", "/pages/contact"
+
+    = content_tag :p, '&nbsp;', :style => 'margin-top:16px;'
     .container-fluid
       .span9
         = yield
