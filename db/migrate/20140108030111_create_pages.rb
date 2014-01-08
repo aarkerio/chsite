@@ -1,3 +1,5 @@
+# Chipotle Software (c) 2013 GPLv3
+
 class CreatePages < ActiveRecord::Migration
   def change
     create_table :pages do |t|
@@ -7,6 +9,7 @@ class CreatePages < ActiveRecord::Migration
       t.boolean :published
       t.integer :visits
       t.string :tags
+      t.string :slug
       t.integer :rank
       t.boolean :cv
       t.boolean :editor

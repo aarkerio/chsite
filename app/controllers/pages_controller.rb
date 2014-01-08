@@ -7,7 +7,7 @@ class PagesController < ApplicationController
 
   before_action :set_page, only: [:show, :edit, :update, :destroy]       #    callbacks
 
-  before_filter :authenticate_user!, :except => [:certification, :about, :contact]
+  before_filter :authenticate_user!, :except => [:home, :view]
 
   helper_method :sort_column, :sort_direction
  
@@ -19,8 +19,8 @@ class PagesController < ApplicationController
   end
 
   # GET /pages/view/1.
-  def certification
-     
+  def view
+     @page = Page.find_by_slug(params[:slug])
   end
 
   # GET /pages/1

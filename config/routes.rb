@@ -7,7 +7,11 @@ Chsite::Application.routes.draw do
   devise_for :users
   resources :images
 
-  resources :pages
+  resources :pages do
+      collection do
+         get  "view/:slug" => "view#slug",   :as => 'view'
+    end
+  end
 
   resources :sections
 

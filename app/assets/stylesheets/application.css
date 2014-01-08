@@ -10,5 +10,6 @@
  *
  *= require_self
  *= require bootstrap/dist/css/bootstrap
+ *= scaffold
  *= require_tree .
  */
