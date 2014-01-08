@@ -18,15 +18,15 @@
     = javascript_include_tag "application"
 
   %body
-    .navbar.navbar-default.navbar-fixed-top{:role => "navigation"}
+    .navbar.navbar-default.navbar-fixed-top{:role => 'navigation'}
       .container
         .navbar-header
-          = link_to "Electronich Record", "/path3", :class => "navbar-brand"
+          = link_to "EHR América", "/path3", :class => "navbar-brand"
         .navbar-collapse.collapse
           %ul.nav.navbar-nav
             %li= link_to "Design", "/path1"
             %li= link_to "ISO Certification", "/path1"
-            %li= link_to "Home", "/path1"
+            %li= link_to "Roadmap", "/path1"
           
           %ul.nav.navbar-nav.navbar-right
             %li= link_to "Home", "/path1"
@@ -38,4 +38,4 @@
         = yield
     
     %footer
-      %p &copy; Company 2013
+      %p &copy; Company 2013-2014
