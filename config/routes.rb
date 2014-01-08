@@ -1,5 +1,7 @@
 
 Chsite::Application.routes.draw do
+  resources :images
+
   resources :pages
 
   resources :sections

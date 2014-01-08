@@ -45,6 +45,7 @@ end
 # test framework
 group :test, :development do
   gem 'rspec'
+  gem 'rspec-rails', '~> 3.0.0.beta'
   gem 'fabrication'
   gem 'faker'
   gem 'database_cleaner'

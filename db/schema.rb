@@ -11,10 +11,54 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140106020840) do
+ActiveRecord::Schema.define(version: 20140108030422) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "groups", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "images", force: true do |t|
+    t.string   "file"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "images", ["user_id"], name: "index_images_on_user_id", using: :btree
+
+  create_table "pages", force: true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.boolean  "discution"
+    t.boolean  "published"
+    t.integer  "visits"
+    t.string   "tags"
+    t.integer  "rank"
+    t.boolean  "cv"
+    t.boolean  "editor"
+    t.integer  "user_id"
+    t.datetime "created"
+    t.integer  "section_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "pages", ["section_id"], name: "index_pages_on_section_id", using: :btree
+  add_index "pages", ["user_id"], name: "index_pages_on_user_id", using: :btree
+
+  create_table "sections", force: true do |t|
+    t.string   "description"
+    t.integer  "order"
+    t.string   "img"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "fname"

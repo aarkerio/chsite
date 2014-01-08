@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Description:
+  = @section.description
+%p
+  %b Order:
+  = @section.order
+%p
+  %b Img:
+  = @section.img
+
+= link_to 'Edit', edit_section_path(@section)
+\|
+= link_to 'Back', sections_path

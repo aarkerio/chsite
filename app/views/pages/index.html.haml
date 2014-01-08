@@ -1,0 +1,41 @@
+%h1 Listing pages
+
+%table
+  %tr
+    %th Title
+    %th Body
+    %th Discution
+    %th Published
+    %th Visits
+    %th Tags
+    %th Rank
+    %th Cv
+    %th Editor
+    %th User
+    %th Created
+    %th Section
+    %th
+    %th
+    %th
+
+  - @pages.each do |page|
+    %tr
+      %td= page.title
+      %td= page.body
+      %td= page.discution
+      %td= page.published
+      %td= page.visits
+      %td= page.tags
+      %td= page.rank
+      %td= page.cv
+      %td= page.editor
+      %td= page.user
+      %td= page.created
+      %td= page.section
+      %td= link_to 'Show', page
+      %td= link_to 'Edit', edit_page_path(page)
+      %td= link_to 'Destroy', page, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Page', new_page_path

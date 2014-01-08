@@ -1,0 +1,42 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @page.title
+%p
+  %b Body:
+  = @page.body
+%p
+  %b Discution:
+  = @page.discution
+%p
+  %b Published:
+  = @page.published
+%p
+  %b Visits:
+  = @page.visits
+%p
+  %b Tags:
+  = @page.tags
+%p
+  %b Rank:
+  = @page.rank
+%p
+  %b Cv:
+  = @page.cv
+%p
+  %b Editor:
+  = @page.editor
+%p
+  %b User:
+  = @page.user
+%p
+  %b Created:
+  = @page.created
+%p
+  %b Section:
+  = @page.section
+
+= link_to 'Edit', edit_page_path(@page)
+\|
+= link_to 'Back', pages_path
