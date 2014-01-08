@@ -8,9 +8,6 @@
 /.bundle
 /config/database.yml
 
-# Ignore the default SQLite database.
-/db/*.sqlite3
-/db/*.sqlite3-journal
 
 # Ignore all logfiles and tempfiles.
 /log/*.log
@@ -31,16 +28,12 @@ capybara-*.html
 /public/system/*
 /coverage/
 /spec/tmp/*
-/public/files/shares/*
 /public/assets/*
-/public/files/imgusers/*
 **.orig
 rerun.txt
 pickle-email-*.html
 spec/support/test_images/*.*
-public/uploads/*
 /config/initializers/secret_token.rb
-public/files/imgsections/*.*
 \#*# 
 # bower
 /app/assets/components/
