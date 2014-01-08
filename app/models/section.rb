@@ -1,4 +1,4 @@
-# Chipotle Software (c) 2013 GPLv3
+# Chipotle Software (c) 2013-2014 GPLv3
 
 class Section < ActiveRecord::Base
    #has_many :pages
