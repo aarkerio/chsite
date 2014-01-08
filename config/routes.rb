@@ -1,5 +1,11 @@
 
 Chsite::Application.routes.draw do
+  resources :pages
+
+  resources :sections
+
+  resources :groups
+
   get "welcome/home"
   resources :users
 
