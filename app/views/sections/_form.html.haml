@@ -1,19 +1,19 @@
-= form_for @section do |f|
+= form_for(@section, {:html => {:class => "niceform"}}) do |f|
   - if @section.errors.any?
     #error_explanation
-      %h2= "#{pluralize(@section.errors.count, "error")} prohibited this section from being saved:"
+      %h2
+        = pluralize(@section.errors.count, "error")
+        prohibited this section from being saved:
       %ul
         - @section.errors.full_messages.each do |msg|
           %li= msg
-
   .field
     = f.label :description
+    %br/
     = f.text_field :description
-  .field
-    = f.label :order
-    = f.number_field :order
+
   .field
     = f.label :img
-    = f.text_field :img
-  .actions
-    = f.submit 'Save'
+    %br/
+    = f.file_field :img
+

@@ -6,7 +6,7 @@ class SectionsController < ApplicationController
 
   before_filter :authenticate_user!
 
-  before_filter :layout_by_action
+  # before_filter :layout_by_action
 
   helper_method :sort_column, :sort_direction 
 
