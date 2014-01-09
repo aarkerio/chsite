@@ -21,12 +21,12 @@
     .navbar.navbar-default.navbar-fixed-top{:role => 'navigation'}
       .container
         .navbar-header
-          = link_to "EHR América", "/path3", :class => "navbar-brand"
+          = link_to "EHR América", "/", :class => "navbar-brand"
         .navbar-collapse.collapse
           %ul.nav.navbar-nav
             %li= link_to 'Design', '/pages/view/faq'
-            %li= link_to "ISO Certification", "/pages/view/faq"
-            %li= link_to "Roadmap", "/pages/view/faq"
+            %li= link_to "ISO Certification", '/pages/view/faq'
+            %li= link_to "Roadmap", '/pages/view/faq'
           - if user_signed_in?
             = link_to 'Logout', destroy_user_session_path, :method => :delete , :class=>'btn btn-sm btn-success'
           - else

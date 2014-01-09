@@ -1,9 +1,9 @@
+
 %h1 Listing pages
 
-%table
+%table.gridtable
   %tr
     %th Title
-    %th Body
     %th Discution
     %th Published
     %th Slug
@@ -17,13 +17,12 @@
   - @pages.each do |page|
     %tr
       %td= page.title
-      %td= raw page.body
       %td= page.discution
       %td= page.published
       %td= page.slug
       %td= page.editor
       %td= page.created
-      %td= page.section
+      %td= page.section.description
       %td= link_to 'Show', page
       %td= link_to 'Edit', edit_page_path(page)
       %td= link_to 'Destroy', page, :method => :delete, :data => { :confirm => 'Are you sure?' }

@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+
 # EHR América (c) 2013-2014 
 
 Chsite::Application.routes.draw do
@@ -9,7 +10,7 @@ Chsite::Application.routes.draw do
 
   resources :pages do
       collection do
-         get  "view/:slug" => "view#slug",   :as => 'view'
+         get  "view/:slug" => "pages#view",   :as => 'view'
     end
   end
 
