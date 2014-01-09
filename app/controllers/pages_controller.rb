@@ -89,7 +89,7 @@ class PagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def page_params
-      params.require(:page).permit(:title, :body, :discution, :published, :visits, :tags, :rank, :cv, :editor, :user_id, :created, :section_id)
+      params.require(:page).permit(:title, :body, :discution, :slug, :published, :visits, :tags, :rank, :cv, :editor, :user_id, :created, :section_id)
     end
 
     # Next two methods order columns on view

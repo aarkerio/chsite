@@ -6,12 +6,8 @@
     %th Body
     %th Discution
     %th Published
-    %th Visits
-    %th Tags
-    %th Rank
-    %th Cv
+    %th Slug
     %th Editor
-    %th User
     %th Created
     %th Section
     %th
@@ -21,15 +17,11 @@
   - @pages.each do |page|
     %tr
       %td= page.title
-      %td= page.body
+      %td= raw page.body
       %td= page.discution
       %td= page.published
-      %td= page.visits
-      %td= page.tags
-      %td= page.rank
-      %td= page.cv
+      %td= page.slug
       %td= page.editor
-      %td= page.user
       %td= page.created
       %td= page.section
       %td= link_to 'Show', page
