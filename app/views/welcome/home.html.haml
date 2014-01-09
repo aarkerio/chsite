@@ -1,26 +1,28 @@
 .container-fluid
   .jumbotron
-    %h1= 'Electronic Health Records'
-    %p= 'Comprehensive, life-long health records'
-
+    .container
+      %h1= 'Electronic Health Records'
+      %p= 'Comprehensive, life-long health records'
+      %p= link_to 'About EHR', '/pages/view/start', :class=>"btn btn-primary btn-lg"
+  
   .container
     .row
       .col-md-4
         = link_to(image_tag("/assets/cssapp/feat1.jpg", :class => "img-responsive img-circle"), "#")
         %h3.class.text-center Health Experts Design
         %p= 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit quis augue sit amet mollis. Mauris id turpis diam. Ut pellentesque justo dolor, nec eleifend mauris euismod vitae. Morbi diam est, ornare non felis sit amet, elementum ultricies ante. Mauris id condimentum mauris. Nunc eleifend et enim eu sagittis. In congue, sapien nec vulputate pulvinar, tellus leo porttitor nibh, at rhoncus tellus lacus ac metus. Vestibulum pharetra scelerisque est sed tincidunt.'
-        = link_to "Read more", "#", :class=>"btn btn-success"
+        = link_to 'Read more', '/pages/view/start', :class=>"btn btn-info"
         
       .col-md-4
         = link_to(image_tag("/assets/cssapp/feat2.jpg", :class => "img-responsive img-circle"), "#")
         %h3.class.text-center Genetic Info 
         %p= 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit quis augue sit amet mollis. Mauris id turpis diam. Ut pellentesque justo dolor, nec eleifend mauris euismod vitae. Morbi diam est, ornare non felis sit amet, elementum ultricies ante. Mauris id condimentum mauris. Nunc eleifend et enim eu sagittis. In congue, sapien nec vulputate pulvinar, tellus leo porttitor nibh, at rhoncus tellus lacus ac metus. Vestibulum pharetra scelerisque est sed tincidunt.'
-        = link_to("Read more", "#", :class=>"btn btn-danger")
+        = link_to("Read more", '/pages/view/start', :class=>"btn btn-info")
         
       .col-md-4
         = link_to(image_tag("/assets/cssapp/feat3.jpg", :class => "img-responsive img-circle"),"#")
         %h3.class.text-center Data in the Cloud
         %p= 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean hendrerit quis augue sit amet mollis. Mauris id turpis diam. Ut pellentesque justo dolor, nec eleifend mauris euismod vitae. Morbi diam est, ornare non felis sit amet, elementum ultricies ante. Mauris id condimentum mauris. Nunc eleifend et enim eu sagittis. In congue, sapien nec vulputate pulvinar, tellus leo porttitor nibh, at rhoncus tellus lacus ac metus. Vestibulum pharetra scelerisque est sed tincidunt.'
-        = link_to "Read more", "#", :class=>"btn btn-info"  
+        = link_to 'Read more', '/pages/view/start', :class=>"btn btn-info"  
 
 

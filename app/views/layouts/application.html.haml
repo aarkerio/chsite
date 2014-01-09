@@ -24,13 +24,13 @@
           = link_to "EHR América", "/path3", :class => "navbar-brand"
         .navbar-collapse.collapse
           %ul.nav.navbar-nav
-            %li= link_to "Design", "/pages/design"
-            %li= link_to "ISO Certification", "/pages/certification"
-            %li= link_to "Roadmap", "/pages/roadmap"
+            %li= link_to 'Design', '/pages/view/faq'
+            %li= link_to "ISO Certification", "/pages/view/faq"
+            %li= link_to "Roadmap", "/pages/view/faq"
           - if user_signed_in?
-            = link_to 'Logout', destroy_user_session_path, :method => :delete , :class=>'btn btn-success'
+            = link_to 'Logout', destroy_user_session_path, :method => :delete , :class=>'btn btn-sm btn-success'
           - else
-            = link_to 'Login', '/users/sign_in', :class=>'btn btn-success'
+            = link_to 'Login', '/users/sign_in', :class=>'btn btn-sm btn-success'
           
           %ul.nav.navbar-nav.navbar-right
             %li= link_to "FAQ", "/pages/faq"
