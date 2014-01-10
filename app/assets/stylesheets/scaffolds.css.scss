@@ -40,7 +40,19 @@ table.gridtable td {
     background-color: #ffffff;
 }
 
+.titulo {
+ font-size:22pt;
+ font-weight:bold;
+ padding:6px;
+ color:#b12a2a;
+ border-bottom: 1px dotted #b12a2a;
+}
 .contenido{
   margin:30px;
   padding:17px;
+  background-color:#fff;
+  behavior: url(/assets/border-radius.htc);
+  -moz-border-radius: 25px 10px / 10px 25px;
+  border-radius: 25px 10px / 10px 25px;
+  box-shadow: 5px 5px 5px #888;
 }
