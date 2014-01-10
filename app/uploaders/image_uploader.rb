@@ -1,10 +1,11 @@
+# Chipotle Software 2013 (c) GPLv3
 # encoding: utf-8
 
 class ImageUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
-  # include CarrierWave::MiniMagick
+  include CarrierWave::MiniMagick
 
   # Include the Sprockets helpers for Rails 3.1+ asset pipeline compatibility:
   # include Sprockets::Helpers::RailsHelper
@@ -17,8 +18,8 @@ class ImageUploader < CarrierWave::Uploader::Base
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
-    # "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
-    'files/imgusers'
+     #"uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+     'files/imgusers'
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
@@ -31,6 +32,9 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Process files as they are uploaded:
   # process :scale => [200, 300]
+  #version :thumb do
+  #     process :resize_to_fill => [150,150]
+  #end
   #
   # def scale(width, height)
   #   # do something
@@ -38,15 +42,16 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :thumb do
-     process :scale => [50, 50]
+     # process :scale => [50, 50]
+     process :resize_to_fit => [50, 50]
   end
 
+ 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   def extension_white_list
-     %w(jpg jpeg gif png)
+       %w(jpg jpeg gif png bmp)
   end
-
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
   # def filename
