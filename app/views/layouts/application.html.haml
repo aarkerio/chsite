@@ -24,9 +24,9 @@
           = link_to "EHR América", "/", :class => "navbar-brand"
         .navbar-collapse.collapse
           %ul.nav.navbar-nav
-            %li= link_to 'Design', '/pages/view/faq'
-            %li= link_to "ISO Certification", '/pages/view/faq'
-            %li= link_to "Roadmap", '/pages/view/faq'
+            %li= link_to 'Design', '/pages/view/design'
+            %li= link_to "ISO Certification", '/pages/view/certification'
+            %li= link_to "Roadmap", '/pages/view/roadmap'
           - if user_signed_in?
             = link_to 'Logout', destroy_user_session_path, :method => :delete , :class=>'btn btn-sm btn-success'
           - else

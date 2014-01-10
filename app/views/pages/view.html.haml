@@ -1,9 +1,7 @@
-%h1 FAQ
 
-%br
+.contenido
+  %p=  image_tag 'ptop.png'
+  %h1= @page.title
+  %p=  raw @page.body
+  %p=  @page.tags
 
-%p "This is "
-
-%p "This is "
-
-= link_to 'New Page', new_page_path
