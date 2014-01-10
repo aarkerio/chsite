@@ -5,7 +5,6 @@
     .picture
       =  link_to(image_tag(image.file, size: "120", alt: image.file, title: image.file), "#{image.file}")
       %span.tny= image.created_at
-      %br= image.tags
       = link_to 'Edit', edit_image_path(image)
       = raw "&nbsp;&nbsp;"
       = link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' }
