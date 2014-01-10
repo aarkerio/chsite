@@ -4,8 +4,12 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.2'
 gem 'pg'
 gem 'byebug'
-gem "haml"                                                                                                                                            
-gem "haml-rails"
+gem 'haml'                                                                                                                                      
+gem 'haml-rails'
+gem 'devise'
+gem 'carrierwave'
+# Image magic, useful to carrierwave
+gem "mini_magick"
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -43,14 +47,15 @@ end
 # gem 'capistrano', group: :development
 
 # test framework
-group :test, :development do   
-  # Use debugger
-  gem 'byebug'
+group :test, :development do
   gem 'rspec'
+  gem 'rspec-rails', '~> 3.0.0.beta'
   gem 'fabrication'
   gem 'faker'
   gem 'database_cleaner'
   gem 'bullet'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 # Pagination

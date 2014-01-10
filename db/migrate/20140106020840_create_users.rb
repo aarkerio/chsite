@@ -4,7 +4,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :fname
       t.string :lname
       t.string :uname
-      t.string :email
+      #  t.string :email  <--- devise
       t.string :passwd
       t.boolean :active
       t.references :group, index: true

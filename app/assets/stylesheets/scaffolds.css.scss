@@ -1,69 +1,58 @@
-body {
-  background-color: #fff;
-  color: #333;
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
-}
 
-p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
-}
-
-pre {
-  background-color: #eee;
-  padding: 10px;
-  font-size: 11px;
-}
-
-a {
-  color: #000;
-  &:visited {
-    color: #666;
-  }
-  &:hover {
+.jumbotron{
+    margin-top: 40px;
+    background: url(/assets/bg_blueplane.jpg) bottom center no-repeat;
+    background-size: cover;
     color: #fff;
-    background-color: #000;
-  }
 }
 
-div {
-  &.field, &.actions {
-    margin-bottom: 10px;
-  }
-}
-
-#notice {
-  color: green;
-}
-
-.field_with_errors {
-  padding: 2px;
-  background-color: red;
-  display: table;
-}
-
-#error_explanation {
-  width: 450px;
-  border: 2px solid red;
-  padding: 7px;
-  padding-bottom: 0;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
-  h2 {
-    text-align: left;
-    font-weight: bold;
-    padding: 5px 5px 5px 15px;
-    font-size: 12px;
-    margin: -7px;
-    margin-bottom: 0px;
-    background-color: #c00;
+.jumbotron h1{
     color: #fff;
-  }
-  ul li {
-    font-size: 12px;
-    list-style: square;
-  }
+    text-shadow: 0px 0px 5px #888888;
+}
+
+footer{
+    border-top: 1px dashed #cccccc;
+    margin: 40px 0px;
+    padding: 20px 0px;
+}
+
+table.gridtable {
+    font-family: verdana,arial,sans-serif;
+    font-size:11px;
+    color:#333333;
+    border-width: 1px;
+    border-color: #666666;
+    border-collapse: collapse;
+}
+table.gridtable th {
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #666666;
+    background-color: #dedede;
+}
+table.gridtable td {
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #666666;
+    background-color: #ffffff;
+}
+
+.titulo {
+ font-size:22pt;
+ font-weight:bold;
+ padding:6px;
+ color:#b12a2a;
+ border-bottom: 1px dotted #b12a2a;
+}
+.contenido{
+  margin:30px;
+  padding:17px;
+  background-color:#fff;
+  behavior: url(/assets/border-radius.htc);
+  -moz-border-radius: 25px 10px / 10px 25px;
+  border-radius: 25px 10px / 10px 25px;
+  box-shadow: 5px 5px 5px #888;
 }

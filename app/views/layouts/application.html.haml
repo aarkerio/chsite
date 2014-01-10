@@ -1,0 +1,46 @@
+!!! 5
+%html(lang="en")
+  %head
+    %meta(charset="utf-8")
+    %meta(http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1")
+    %meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    %title= content_for?(:title) ? yield(:title) : "OpenEHR America"
+    = csrf_meta_tags
+    / Le HTML5 shim, for IE6-8 support of HTML elements
+    /[if lt IE 9]
+      = javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"
+    = stylesheet_link_tag "application", :media => "all"
+    = favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144'
+    = favicon_link_tag 'apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114'
+    = favicon_link_tag 'apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72'
+    = favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png'
+    = favicon_link_tag 'favicon.png', :rel => 'shortcut icon'
+    = javascript_include_tag "application"
+
+  %body
+    .navbar.navbar-default.navbar-fixed-top{:role => 'navigation'}
+      .container
+        .navbar-header
+          = link_to "EHR América", "/", :class => "navbar-brand"
+        .navbar-collapse.collapse
+          %ul.nav.navbar-nav
+            %li= link_to "ISO Certification", '/pages/view/certification'
+            %li= link_to "Roadmap", '/pages/view/roadmap'
+            %li= link_to 'Design', '/pages/view/design'
+          - if user_signed_in?
+            = link_to 'Logout', destroy_user_session_path, :method => :delete , :class=>'btn btn-sm btn-success'
+          - else
+            = link_to 'Login', '/users/sign_in', :class=>'btn btn-sm btn-success'
+          
+          %ul.nav.navbar-nav.navbar-right
+            %li= link_to "FAQ", "/pages/view/faq"
+            %li= link_to "About US", "/pages/view/about"
+            %li= link_to "Contact", "/pages/view/contact"
+
+    = content_tag :p, '&nbsp;', :style => 'margin-top:16px;'
+    .container-fluid
+      .span9
+        = yield
+    
+    %footer
+      %p &copy; Company 2013-2014

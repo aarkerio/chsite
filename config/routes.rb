@@ -1,6 +1,24 @@
+# -*- coding: utf-8 -*-
+
+
+# EHR América (c) 2013-2014 
 
 Chsite::Application.routes.draw do
-  get "welcome/home"
+
+  devise_for :users
+  resources :images
+
+  resources :pages do
+      collection do
+         get  "view/:slug" => "pages#view",   :as => 'view'
+    end
+  end
+
+  resources :sections
+
+  resources :groups
+
+  #get "welcome/home"
   resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -9,6 +27,9 @@ Chsite::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#home'
 
+  match '/404' => 'errors#not_found', via: :all
+  match '/406' => 'errors#not_acceptable', via: :all 
+  match '/500' => 'errors#internal_server_error', via: :all
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
