@@ -1,10 +1,20 @@
+# Chipotle Software 2013 (c) GPLv3
+
 class ImagesController < ApplicationController
+
   before_action :set_image, only: [:show, :edit, :update, :destroy]
+
+  before_filter :authenticate_user!
+
+  before_filter :layout_by_action
+
+  helper_method :sort_column, :sort_direction 
 
   # GET /images
   # GET /images.json
   def index
-    @images = Image.all
+      order = sort_column + " " + sort_direction
+      @images = Image.paginate(:page => params[:page], :per_page => 30).where(:user_id => current_user.id).order(order)
   end
 
   # GET /images/1
@@ -25,6 +35,7 @@ class ImagesController < ApplicationController
   # POST /images.json
   def create
     @image = Image.new(image_params)
+    @image.user_id = current_user.id
 
     respond_to do |format|
       if @image.save
@@ -69,6 +80,15 @@ class ImagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def image_params
-      params.require(:image).permit(:file, :user_id)
+      params.require(:image).permit(:file, :user_id, :tags)
+    end
+
+    # Next two methods order columns on view
+    def sort_column
+        Image.column_names.include?(params[:sort]) ? params[:sort] : "id"
+    end
+  
+    def sort_direction
+        %w[asc desc].include?(params[:direction]) ? params[:direction] : "DESC"
     end
 end

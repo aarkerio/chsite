@@ -1,4 +1,4 @@
-# Chipotle Software 2013 (c) GPLv3
+# Chipotle Software 2013-2014 (c) GPLv3
 
 class Image < ActiveRecord::Base
 

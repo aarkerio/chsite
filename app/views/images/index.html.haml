@@ -1,21 +1,22 @@
 %h1 Listing images
 
-%table
-  %tr
-    %th File
-    %th User
-    %th
-    %th
-    %th
-
+.container
   - @images.each do |image|
-    %tr
-      %td= image.file
-      %td= image.user
-      %td= link_to 'Show', image
-      %td= link_to 'Edit', edit_image_path(image)
-      %td= link_to 'Destroy', image, :method => :delete, :data => { :confirm => 'Are you sure?' }
+    .picture
+      =  link_to(image_tag(image.file, size: "120", alt: image.file, title: image.file), "#{image.file}")
+      %span.tny= image.created_at
+      %br= image.tags
+      = link_to 'Edit', edit_image_path(image)
+      = raw "&nbsp;&nbsp;"
+      = link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' }
 
-%br
+%br/
 
-= link_to 'New Image', new_image_path
+= content_tag(:p, link_to('New Image', new_image_path))
+= will_paginate @images
+
+:css
+  .container { float:center;overflow: hidden;display: block;}
+  .picture { float:left; width:125px;margin:5px;padding:5px;text-align:center;border:1px dotted gray;}
+  .tny{ font-size:7pt; }
+
