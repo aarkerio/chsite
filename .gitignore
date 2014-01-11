@@ -38,3 +38,5 @@ spec/support/test_images/*.*
 # bower
 /app/assets/components/
 app/assets/components/
+Gemfile.lock
+
