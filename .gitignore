@@ -38,3 +38,6 @@ spec/support/test_images/*.*
 # bower
 /app/assets/components/
 app/assets/components/
+
+# Ignore application configuration
+/config/application.yml
