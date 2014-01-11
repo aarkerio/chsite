@@ -46,7 +46,7 @@ end
 
 # Use Capistrano for deployment
 gem 'capistrano'
-
+gem 'capistrano-rails'
 # test framework
 group :test, :development do
   gem 'rspec'
