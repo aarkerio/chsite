@@ -4,7 +4,6 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.2'
 gem 'pg'
 gem 'byebug'
-<<<<<<< HEAD
 gem 'haml'
 gem 'haml-rails'
 gem 'puma'
@@ -15,7 +14,6 @@ gem 'devise'
 gem 'carrierwave'
 # Image magic, useful to carrierwave
 gem "mini_magick"
->>>>>>> develop
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -60,12 +58,8 @@ group :test, :development do
   gem 'faker'
   gem 'database_cleaner'
   gem 'bullet'
-<<<<<<< HEAD
-  gem 'minitest'
-=======
   gem 'better_errors'
   gem 'binding_of_caller'
->>>>>>> develop
 end
 
 # Pagination
