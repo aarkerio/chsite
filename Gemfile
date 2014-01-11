@@ -7,9 +7,6 @@ gem 'byebug'
 gem 'haml'
 gem 'haml-rails'
 gem 'puma'
-=======
-gem 'haml'                                                                                                                                      
-gem 'haml-rails'
 gem 'devise'
 gem 'carrierwave'
 # Image magic, useful to carrierwave

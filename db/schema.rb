@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20140108040931) do
     t.boolean  "published"
     t.integer  "visits"
     t.string   "tags"
+    t.string   "slug"
     t.integer  "rank"
     t.boolean  "cv"
     t.boolean  "editor"
