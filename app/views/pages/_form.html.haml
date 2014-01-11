@@ -1,0 +1,65 @@
+
+= javascript_include_tag :jquniformmin, :gips
+= stylesheet_link_tag  'juthemes/default/css/uniform.default', 'gips'
+
+= form_for(@page) do |f|
+  - if @page.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@page.errors.count, "error")
+        prohibited this page from being saved:
+      %ul
+        - @page.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label :title
+    %br/
+    = f.text_field :title, size: 70
+
+  .field
+    = f.label :slug
+    %br/
+    = f.text_field :slug, size: 20
+ 
+    %br/ 
+    %br/
+    = f.text_area :body, cols: 110, rows:20
+  .field
+    = f.label :discution
+    %br/
+    = f.check_box :discution
+  .field
+    = f.label :published
+    %br/
+    = f.check_box :published
+  .field
+    = f.label :tags
+    %br/
+    = f.text_field :tags, size: 70
+  .field
+    = f.label :cv
+    %br/
+    = f.check_box :cv
+  .field
+    = f.label :editor
+    %br/
+    = f.check_box :editor
+  .field
+    = f.label  :section
+    %br/
+    -# = f.select :section_id, @sections.collect {|t| [ t.description, t.id ] }
+    = f.collection_select(:section_id, Section.all, :id, :description, {:include_blank => false})
+  .actions
+    = f.submit
+
+:javascript
+    $(document).ready(function () {
+    $('input#course_title').gips({ 'theme': 'purple', autoHide: true, text: 'This is purple tooltip, auto hide after pausess time elapses.' });
+    $('#course_description').gips({ 'theme': 'green', placement: 'right', text: 'Please provide an small quizz explanation' });
+    $('#course_objectives').gips({ 'theme': 'yellow', autoHide: true, placement: 'right', text: 'objectives' });
+    $('#course_syllabus').gips({ 'theme': 'red', placement: 'bottom', text: 'Syllabus' });
+     $('input#course_code').gips({ 'theme': 'purple', autoHide: true, text: 'This is purple tooltip, auto hide after pausess time elapses.' });
+    // Style everything
+    $("select, input, textarea, a.button, button").uniform();
+    });
+

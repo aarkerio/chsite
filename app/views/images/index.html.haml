@@ -1,0 +1,21 @@
+%h1 Listing images
+
+.container
+  - @images.each do |image|
+    .picture
+      =  link_to(image_tag(image.file, size: "120", alt: image.file, title: image.file), "#{image.file}")
+      %span.tny= image.created_at
+      = link_to 'Edit', edit_image_path(image)
+      = raw "&nbsp;&nbsp;"
+      = link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br/
+
+= content_tag(:p, link_to('New Image', new_image_path))
+= will_paginate @images
+
+:css
+  .container { float:center;overflow: hidden;display: block;}
+  .picture { float:left; width:125px;margin:5px;padding:5px;text-align:center;border:1px dotted gray;}
+  .tny{ font-size:7pt; }
+

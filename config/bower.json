@@ -1,0 +1,15 @@
+
+ {
+  "version": "0.0.1",
+  "name": "devchsite",
+  "ignore": [
+       ".jshintrc",
+       "**/*.txt"
+     ],
+  "dependencies": {
+      "jquery-ui"           : "",
+      "bootstrap"           : "~> 3.0",
+      "font-awesome"        : ""
+  }
+}
+

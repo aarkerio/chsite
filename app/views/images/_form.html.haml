@@ -1,0 +1,26 @@
+= javascript_include_tag :jquniformmin
+= stylesheet_link_tag  'juthemes/default/css/uniform.default'
+
+= form_for(@image, {:html => {:class => "niceform"}}) do |f|
+  - if @image.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@image.errors.count, "error")
+        prohibited this image from being saved:
+      %ul
+        - @image.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label :file
+    %br/
+    = f.file_field :file
+
+  .actions
+    = f.submit
+
+:javascript
+    $(document).ready(function () {
+    // Style everything
+    $("select, input,  button").uniform();
+    });
+
