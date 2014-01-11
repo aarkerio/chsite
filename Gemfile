@@ -4,8 +4,9 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.2'
 gem 'pg'
 gem 'byebug'
-gem "haml"                                                                                                                                            
-gem "haml-rails"
+gem 'haml'
+gem 'haml-rails'
+gem 'puma'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -43,14 +44,13 @@ end
 # gem 'capistrano', group: :development
 
 # test framework
-group :test, :development do   
-  # Use debugger
-  gem 'byebug'
+group :test, :development do
   gem 'rspec'
   gem 'fabrication'
   gem 'faker'
   gem 'database_cleaner'
   gem 'bullet'
+  gem 'minitest'
 end
 
 # Pagination
