@@ -30,7 +30,7 @@ describe PagesController do
   describe "GET view" do
     it "assigns the requested page as @page" do
         page = Page.create( valid_attributes )
-        self.get('view', {:slug => page.to_param})
+        self.get('view', {:slug => page.slug})
         assigns(:page).should eq(page)
     end
   end
