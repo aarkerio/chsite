@@ -1,3 +1,5 @@
+# Chipotle Software (c) 2014 GPLv3
+
 require 'spec_helper'
 
 describe "images/index" do
