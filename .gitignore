@@ -40,3 +40,5 @@ spec/support/test_images/*.*
 app/assets/components/
 Gemfile.lock
 
+# Ignore application configuration
+/config/application.yml

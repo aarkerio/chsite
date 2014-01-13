@@ -10,8 +10,8 @@ gem 'puma'
 gem 'devise'
 gem 'carrierwave'
 # Image magic, useful to carrierwave
-gem "mini_magick"
-
+gem 'mini_magick'
+gem 'figaro'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
