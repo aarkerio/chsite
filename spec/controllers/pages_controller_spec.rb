@@ -1,7 +1,7 @@
-# Chipotle Software(c) 2013
+# Chipotle Software(c) 2013-2014
 
 require 'spec_helper'
-require 'debugger'
+require 'byebug'
 
 describe PagesController do
   
@@ -10,7 +10,6 @@ describe PagesController do
   let(:valid_attributes) { FactoryGirl.attributes_for(:page) }
   # let(:valid_attributes) { FactoryGirl.attributes_for(:page).merge(section: FactoryGirl.create(:section), user: FactoryGirl.create(:user)) }
   let(:valid_session)    { {} } 
- 
  
    describe "GET index" do
     it "assigns all pages as @pages" do
