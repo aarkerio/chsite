@@ -10,7 +10,7 @@ describe PagesController do
   let(:valid_attributes) { Fabricate.attributes_for(:page) }
   let(:valid_session)    { {} } 
  
-   describe "GET index" do
+  describe "GET index" do
     it "assigns all pages as @pages" do
       page = Page.create! valid_attributes  # load model
       get('index', {}) 
@@ -30,7 +30,7 @@ describe PagesController do
   describe "GET view" do
     it "assigns the requested page as @page" do
         page = Page.create( valid_attributes )
-        self.get('view', {:id => page.to_param})
+        self.get('view', {:slug => page.to_param})
         assigns(:page).should eq(page)
     end
   end
@@ -147,5 +147,4 @@ describe PagesController do
       response.should redirect_to(pages_url)
     end
   end
-
 end

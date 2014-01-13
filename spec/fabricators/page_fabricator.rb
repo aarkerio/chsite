@@ -10,7 +10,7 @@ Fabricator(:page) do
   rank       3
   cv         true
   editor     true
-  user_id    { Fabricate(:user) } 
-  section_id { Fabricate(:section) }
+  user       { Fabricate(:user) } 
+  section    { Fabricate(:section) }
   slug       { Faker::Lorem.characters 12 }  
 end

@@ -1,3 +1,5 @@
+# Chipotle Software (c) 2014 GPLv3
+
 class AddDeviseToUsers < ActiveRecord::Migration
   def self.up
     change_table(:users) do |t|
@@ -32,7 +34,6 @@ class AddDeviseToUsers < ActiveRecord::Migration
 
       ## Token authenticatable
       # t.string :authentication_token
-
 
       # Uncomment below if timestamps were not included in your original model.
       # t.timestamps

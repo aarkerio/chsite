@@ -1,3 +1,5 @@
+# Chipotle Software (c) 2014 GPLv3
+
 class CreateUsers < ActiveRecord::Migration
   def change
     create_table :users do |t|
@@ -5,7 +7,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :lname
       t.string :uname
       #  t.string :email  <--- devise
-      t.string :passwd
+      t.string :password
       t.boolean :active
       t.references :group, index: true
 
