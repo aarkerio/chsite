@@ -1,21 +1,18 @@
+# Chipotle Software (c) 2013 GPLv3
+
+require 'rubygems'
+require 'spork'
+
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
+require 'fabricator'
 
-# Requires supporting ruby files with custom matchers and macros, etc, in
-# spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
-# run as spec files by default. This means that files in spec/support that end
-# in _spec.rb will both be required and run as specs, causing the specs to be
-# run twice. It is recommended that you do not name files matching this glob to
-# end with _spec.rb. You can configure this pattern with with the --pattern
-# option on the command line or in ~/.rspec, .rspec or `.rspec-local`.
-Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
-
-# Checks for pending migrations before tests are run.
-# If you are not using ActiveRecord, you can remove this line.
-ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
+# Requires supporting ruby files with custom matchers and macros, etc,
+# in spec/support/ and its subdirectories.
+Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
 RSpec.configure do |config|
   # ## Mock Framework
@@ -27,7 +24,7 @@ RSpec.configure do |config|
   # config.mock_with :rr
 
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
-  config.fixture_path = "#{::Rails.root}/spec/fixtures"
+  config.fixture_path = "#{::Rails.root}/spec/fabricators"
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
@@ -44,4 +41,44 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
+
+  ## My stuff for Devise 
+  config.include Devise::TestHelpers, :type => :controller   
+  config.include Devise::TestHelpers, :type => :view                # view
+  config.include Devise::TestHelpers, :type => :helper
+  config.extend  ControllerMacros,    :type => :controller
+   
+  #  DatabaseCleaner
+  config.before(:suite) do
+      DatabaseCleaner.strategy = :transaction
+      DatabaseCleaner.clean_with(:truncation)
+  end
+
+  config.before(:each) do
+      DatabaseCleaner.start
+  end
+
+  config.after(:each) do
+      DatabaseCleaner.clean
+  end
+
+  # carrierwave
+  if Rails.env.test? or Rails.env.cucumber?
+      CarrierWave.configure do |config|
+          config.storage = :file
+          config.enable_processing = false
+      end
+  end
+
+  # clean after test carrierwave
+  # config.after(:all) do
+      # Get rid of the linked images
+  #    if Rails.env.test? || Rails.env.cucumber?
+  #        tmp = FactoryGirl.create(:image)
+  #        store_path = File.dirname(File.dirname(tmp.logo.url))
+  #        temp_path = tmp.logo.cache_dir
+  #        FileUtils.rm_rf(Dir["#{Rails.root}/public/#{store_path}/[^.]*"])
+  #        FileUtils.rm_rf(Dir["#{temp_path}/[^.]*"])
+  #  end
+  # end
 end

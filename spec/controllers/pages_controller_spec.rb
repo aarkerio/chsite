@@ -7,8 +7,7 @@ describe PagesController do
   
   #render_views   # test the views also
   login_user    # spec macro for devise
-  let(:valid_attributes) { FactoryGirl.attributes_for(:page) }
-  # let(:valid_attributes) { FactoryGirl.attributes_for(:page).merge(section: FactoryGirl.create(:section), user: FactoryGirl.create(:user)) }
+  let(:valid_attributes) { Fabricate.attributes_for(:page) }
   let(:valid_session)    { {} } 
  
    describe "GET index" do
