@@ -1,4 +1,4 @@
-# Chipotle Software(c) 2013
+# Chipotle Software(c) 2013-2014
 
 require 'spec_helper'
 include CarrierWave::Test::Matchers
@@ -10,7 +10,7 @@ describe ImagesController do
   # This should return the minimal set of attributes required to create a valid
   # Image. 
 
-  let(:valid_attributes) { Fabricate.attributes_for(:page) }
+  let(:valid_attributes) { Fabricate.attributes_for(:image) }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in

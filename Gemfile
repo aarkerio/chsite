@@ -56,6 +56,7 @@ group :test, :development do
   gem 'bullet'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'spork', '~> 1.0rc'
 end
 
 # Pagination

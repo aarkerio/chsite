@@ -4,6 +4,6 @@
 
 Fabricator(:image) do
     file   { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'support', 'test_images', 'audi.png')) }
-    tags   { Faker::Lorem.characters 20 }
+#    tags   { Faker::Lorem.characters 20 }
     user   { Fabricate(:user) } 
 end
